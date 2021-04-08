@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<StackPane alignment="TOP_LEFT" prefHeight="250.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ps.projekat.prikaziKontroleri.IzlazKontroler">
+   <children>
+      <Label fx:id="lblPoruka" alignment="CENTER" contentDisplay="CENTER" prefWidth="400.0" text="Da li ste sigurni da želite nastaviti?" textAlignment="CENTER" textFill="#047c08">
+         <font>
+            <Font name="Palatino Linotype" size="18.0" />
+         </font>
+         <StackPane.margin>
+            <Insets top="80.0" />
+         </StackPane.margin>
+      </Label>
+      <AnchorPane fx:id="anchPnNastavi" maxHeight="-Infinity" maxWidth="-Infinity" onMouseClicked="#onAnchPnNastaviClicked" prefHeight="50.0" prefWidth="150.0">
+         <children>
+            <Label fx:id="lblNastavi" layoutX="44.0" layoutY="13.0" text="Nastavi" textFill="#e54c2d">
+               <font>
+                  <Font name="Palatino Linotype" size="18.0" />
+               </font>
+            </Label>
+         </children>
+         <StackPane.margin>
+            <Insets left="30.0" top="150.0" />
+         </StackPane.margin>
+      </AnchorPane>
+      <AnchorPane fx:id="anchPnOdustani" maxHeight="-Infinity" maxWidth="-Infinity" onMouseClicked="#onAnchPnOdustaniClicked" prefHeight="50.0" prefWidth="176.0">
+         <children>
+            <Label fx:id="lblOdustani" layoutX="37.0" layoutY="13.0" text="Odustani" textFill="#047c08">
+               <font>
+                  <Font name="Palatino Linotype" size="18.0" />
+               </font>
+            </Label>
+         </children>
+         <StackPane.margin>
+            <Insets left="220.0" right="30.0" top="150.0" />
+         </StackPane.margin>
+      </AnchorPane>
+   </children>
+</StackPane>

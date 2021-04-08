@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="brdPnNalog" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="850.0" styleClass="defaultPozadina" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ps.projekat.prikaziKontroleri.NalogKontroler">
+   <top>
+      <ImageView fx:id="imgNazadNaPocetnu" fitHeight="44.0" fitWidth="49.0" onMouseClicked="#onImgNazadNaPocetnuClicked" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="TOP_LEFT">
+         <BorderPane.margin>
+            <Insets left="65.0" top="40.0" />
+         </BorderPane.margin>
+      </ImageView>
+   </top>
+    <left>
+        <VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="498.0" prefWidth="180.0" spacing="10.0" BorderPane.alignment="TOP_LEFT">
+            <children>
+                <AnchorPane fx:id="anchPnIzmjena" maxWidth="-Infinity" onMouseClicked="#onAnchPnIzmjenaClicked" prefHeight="50.0" prefWidth="150.0">
+                    <children>
+                        <Label layoutX="9.0" layoutY="14.0" text="Izmjena informacija" textFill="#045c32">
+                            <font>
+                                <Font name="Palatino Linotype" size="15.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </AnchorPane>
+                <Separator layoutX="85.0" layoutY="80.0" prefWidth="200.0">
+                    <VBox.margin>
+                        <Insets left="35.0" right="35.0" />
+                    </VBox.margin>
+                </Separator>
+                <AnchorPane fx:id="anchPnOdjava" maxWidth="-Infinity" onMouseClicked="#onAnchPnOdjavaClicked" prefHeight="50.0" prefWidth="150.0">
+                    <children>
+                        <Label layoutX="16.0" layoutY="14.0" text="Odjava sa sistema" textFill="#045c32">
+                            <font>
+                                <Font name="Palatino Linotype" size="15.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </AnchorPane>
+                <Separator prefWidth="200.0">
+                    <VBox.margin>
+                        <Insets left="35.0" right="35.0" />
+                    </VBox.margin>
+                </Separator>
+                <AnchorPane fx:id="anchPnBrisanje" maxWidth="-Infinity" onMouseClicked="#onAnchPnBrisanjeClicked" prefHeight="50.0" prefWidth="150.0">
+                    <children>
+                        <Label layoutX="24.0" layoutY="14.0" text="Brisanje naloga" textFill="#045c32">
+                            <font>
+                                <Font name="Palatino Linotype" size="15.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </AnchorPane>
+            </children>
+            <BorderPane.margin>
+                <Insets left="80.0" top="80.0" />
+            </BorderPane.margin>
+        </VBox>
+    </left>
+    <center>
+        <StackPane fx:id="stkPnNalog" alignment="TOP_LEFT" prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f5fff9" height="230.0" stroke="#267326" strokeType="INSIDE" width="500.0">
+                <StackPane.margin>
+                    <Insets left="40.0" top="25.0" />
+                </StackPane.margin>
+            </Rectangle>
+                <Label text="Ime:">
+                    <font>
+                        <Font name="Palatino Linotype" size="18.0" />
+                    </font>
+                    <StackPane.margin>
+                        <Insets left="100.0" top="50.0" />
+                    </StackPane.margin>
+                </Label>
+                <Label text="Prezime:">
+                    <font>
+                        <Font name="Palatino Linotype" size="18.0" />
+                    </font>
+                    <StackPane.margin>
+                        <Insets left="100.0" top="120.0" />
+                    </StackPane.margin>
+                </Label>
+                <Label text="Korisničko ime:">
+                    <font>
+                        <Font name="Palatino Linotype" size="18.0" />
+                    </font>
+                    <StackPane.margin>
+                        <Insets left="100.0" top="190.0" />
+                    </StackPane.margin>
+                </Label>
+                <Label fx:id="lblIme">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                    <StackPane.margin>
+                        <Insets left="250.0" top="55.0" />
+                    </StackPane.margin>
+                </Label>
+                <Label fx:id="lblPrezime">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                    <StackPane.margin>
+                        <Insets left="250.0" top="125.0" />
+                    </StackPane.margin>
+                </Label>
+                <Label fx:id="lblKorisnickoIme">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                    <StackPane.margin>
+                        <Insets left="250.0" top="193.0" />
+                    </StackPane.margin>
+                </Label>
+            </children>
+         <BorderPane.margin>
+            <Insets top="40.0" />
+         </BorderPane.margin>
+        </StackPane>
+    </center>
+</BorderPane>

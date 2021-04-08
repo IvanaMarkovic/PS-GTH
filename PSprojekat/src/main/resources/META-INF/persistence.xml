@@ -1,0 +1,21 @@
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
+             http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
+             version="2.1">
+
+    <persistence-unit name="GLobalThinkersHelper">
+        <description> Sistem za vodjenje evidencije iznamjljivanja sala </description>
+        <properties>
+            <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver" />
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/PSprojekat" />
+            <property name="javax.persistence.jdbc.user" value="root" />
+<!--        Otkomentarisite ovaj dio i unesite svoju sifru kao vrijednost value="" za konekciju na bazu podataka
+            <property name="javax.persistence.jdbc.password" value="vasa sifra" />-->
+            <property name="hibernate.show_sql" value="true" />
+            <property name="hibernate.hbm2ddl.auto" value="update" />
+        </properties>
+
+    </persistence-unit>
+
+</persistence>

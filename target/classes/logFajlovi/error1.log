@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-09-23T17:14:19.264353600Z</date>
+  <millis>1569258859264</millis>
+  <nanos>353600</nanos>
+  <sequence>0</sequence>
+  <logger>ps.projekat.util.CitanjePropertiesFajla</logger>
+  <level>WARNING</level>
+  <class>ps.projekat.util.LoggerUtil</class>
+  <method>log</method>
+  <thread>17</thread>
+  <message>.\src\main\resources\propertiesFajlovi\putanjeFajlova (The system cannot find the file specified)</message>
+</record>

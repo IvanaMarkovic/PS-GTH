@@ -1,0 +1,742 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="700.0" prefWidth="850.0" styleClass="defaultPozadina" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ps.projekat.prikaziKontroleri.ObrasciKontroler">
+    <top>
+        <ImageView fx:id="imgNazadNaPocetnu" fitHeight="44.0" fitWidth="49.0" onMouseClicked="#onImgNazadNaPocetnuClicked" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="TOP_LEFT">
+            <BorderPane.margin>
+                <Insets left="65.0" top="40.0" />
+            </BorderPane.margin>
+        </ImageView>
+    </top>
+    <left>
+        <VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="498.0" prefWidth="180.0" spacing="10.0" BorderPane.alignment="TOP_LEFT">
+            <children>
+                <AnchorPane fx:id="anchPnKlijenti" maxWidth="-Infinity" onMouseClicked="#onAnchPnKlijentiClicked" prefHeight="50.0" prefWidth="150.0">
+                    <children>
+                        <Label layoutX="17.0" layoutY="14.0" text="Rad sa klijentima" textFill="#045c32">
+                            <font>
+                                <Font name="Palatino Linotype" size="15.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </AnchorPane>
+                <Separator layoutX="85.0" layoutY="80.0" prefWidth="200.0">
+                    <VBox.margin>
+                        <Insets left="25.0" right="25.0" />
+                    </VBox.margin>
+                </Separator>
+                <AnchorPane fx:id="anchPnCjenovnik" maxWidth="-Infinity" onMouseClicked="#onAnchPnCjenovnikClicked" prefHeight="50.0" prefWidth="150.0">
+                    <children>
+                        <Label layoutX="8.0" layoutY="14.0" text="Rad sa cjenovnicima" textFill="#045c32">
+                            <font>
+                                <Font name="Palatino Linotype" size="15.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </AnchorPane>
+                <Separator prefWidth="200.0">
+                    <VBox.margin>
+                        <Insets left="25.0" right="25.0" />
+                    </VBox.margin>
+                </Separator>
+                <AnchorPane fx:id="anchPnRezervacija" maxWidth="-Infinity" onMouseClicked="#onAnchPnRezervacijaClicked" prefHeight="50.0" prefWidth="150.0">
+                    <children>
+                        <Label layoutX="5.0" layoutY="14.0" text="Rad sa rezervacijama" textFill="#045c32">
+                            <font>
+                                <Font name="Palatino Linotype" size="15.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </AnchorPane>
+            </children>
+            <BorderPane.margin>
+                <Insets left="50.0" top="80.0" />
+            </BorderPane.margin>
+        </VBox>
+    </left>
+    <center>
+        <TabPane fx:id="tabPnObrasci" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+            <tabs>
+                <Tab fx:id="tabKlijenti" styleClass="tabs" text="Rad sa klijentima">
+                    <content>
+                        <StackPane prefHeight="706.0" prefWidth="553.0" styleClass="tabSadrzaj">
+                            <children>
+                                <VBox prefHeight="480.0" prefWidth="540.0" spacing="10.0" style="-fx-border-color: #267326; -fx-background-color: #ffffff;">
+                                    <children>
+                                        <Label text="Odaberite željenu opciju:">
+                                            <VBox.margin>
+                                                <Insets left="30.0" top="10.0" />
+                                            </VBox.margin>
+                                            <font>
+                                                <Font name="Palatino Linotype" size="12.0" />
+                                            </font>
+                                        </Label>
+                                        <RadioButton fx:id="rdBtnKreiranjeKlijenta" mnemonicParsing="false" onMouseClicked="#onRdBtnKreiranjeKlijentaClicked" text="Kreiranje novog korisnika">
+                                            <VBox.margin>
+                                                <Insets left="50.0" top="5.0" />
+                                            </VBox.margin>
+                                            <toggleGroup>
+                                                <ToggleGroup fx:id="tgGrpKlijent" />
+                                            </toggleGroup>
+                                            <font>
+                                                <Font name="Palatino Linotype" size="12.0" />
+                                            </font>
+                                        </RadioButton>
+                                        <RadioButton fx:id="rdBtnIzmjenaKlijenta" mnemonicParsing="false" onMouseClicked="#onRdBtnIzmjenaKlijentaClicked" text="Izmjena korisnika" toggleGroup="$tgGrpKlijent">
+                                            <VBox.margin>
+                                                <Insets left="50.0" />
+                                            </VBox.margin>
+                                            <font>
+                                                <Font name="Palatino Linotype" size="12.0" />
+                                            </font>
+                                        </RadioButton>
+                                        <RadioButton fx:id="rdBtnBrisanjeKlijenta" mnemonicParsing="false" onMouseClicked="#onRdBtnBrisanjeKlijentaClicked" text="Brisanje korisnika" toggleGroup="$tgGrpKlijent">
+                                            <VBox.margin>
+                                                <Insets left="50.0" />
+                                            </VBox.margin>
+                                            <font>
+                                                <Font name="Palatino Linotype" size="12.0" />
+                                            </font>
+                                        </RadioButton>
+                                        <StackPane fx:id="stkPnTab1" alignment="TOP_LEFT" prefHeight="500.0" prefWidth="800.0">
+                                            <children>
+                                                <Label fx:id="lblPretraga1" text="Pretraga:" visible="false" StackPane.alignment="TOP_LEFT">
+                                                    <StackPane.margin>
+                                                        <Insets left="72.0" top="20.0" />
+                                                    </StackPane.margin>
+                                                    <font>
+                                                        <Font name="Palatino Linotype" size="12.0" />
+                                                    </font>
+                                                </Label>
+                                                <Label text="Ime:">
+                                                    <font>
+                                                        <Font name="Palatino Linotype" size="12.0" />
+                                                    </font>
+                                                    <StackPane.margin>
+                                                        <Insets left="100.0" top="80.0" />
+                                                    </StackPane.margin>
+                                                </Label>
+                                                <Label text="Prezime:" StackPane.alignment="TOP_LEFT">
+                                                    <StackPane.margin>
+                                                        <Insets left="100.0" top="130.0" />
+                                                    </StackPane.margin>
+                                                    <font>
+                                                        <Font name="Palatino Linotype" size="12.0" />
+                                                    </font>
+                                                </Label>
+                                                <Label text="Firma:" StackPane.alignment="TOP_LEFT">
+                                                    <StackPane.margin>
+                                                        <Insets left="100.0" top="180.0" />
+                                                    </StackPane.margin>
+                                                    <font>
+                                                        <Font name="Palatino Linotype" size="12.0" />
+                                                    </font>
+                                                </Label>
+                                                <Label text="E-mail:">
+                                                    <StackPane.margin>
+                                                        <Insets left="100.0" top="230.0" />
+                                                    </StackPane.margin>
+                                                    <font>
+                                                        <Font name="Palatino Linotype" size="12.0" />
+                                                    </font>
+                                                </Label>
+                                                <Label text="Broj telefona:">
+                                                    <StackPane.margin>
+                                                        <Insets left="100.0" top="280.0" />
+                                                    </StackPane.margin>
+                                                    <font>
+                                                        <Font name="Palatino Linotype" size="12.0" />
+                                                    </font>
+                                                </Label>
+                                                <Label text="Edukacije:">
+                                                    <StackPane.margin>
+                                                        <Insets left="100.0" top="330.0" />
+                                                    </StackPane.margin>
+                                                    <font>
+                                                        <Font name="Palatino Linotype" size="12.0" />
+                                                    </font>
+                                                </Label>
+                                                <TextField fx:id="txtFldPretraga1" maxWidth="-Infinity" onKeyPressed="#onTxtFldPretraga1Pressed" prefWidth="250.0" visible="false">
+                                                    <StackPane.margin>
+                                                        <Insets left="150.0" top="15.0" />
+                                                    </StackPane.margin>
+                                                </TextField>
+                                                <TextField fx:id="txtFldIme" maxWidth="-Infinity" prefWidth="250.0" promptText="*">
+                                                    <StackPane.margin>
+                                                        <Insets left="200.0" top="75.0" />
+                                                    </StackPane.margin>
+                                                </TextField>
+                                                <TextField fx:id="txtFldPrezime" maxWidth="-Infinity" prefWidth="250.0" promptText="*">
+                                                    <StackPane.margin>
+                                                        <Insets left="200.0" top="125.0" />
+                                                    </StackPane.margin>
+                                                </TextField>
+                                                <TextField fx:id="txtFldFirma" maxWidth="-Infinity" prefWidth="250.0">
+                                                    <StackPane.margin>
+                                                        <Insets left="200.0" top="175.0" />
+                                                    </StackPane.margin>
+                                                </TextField>
+                                                <TextField fx:id="txtFldEmail" maxWidth="-Infinity" prefWidth="250.0" promptText="*">
+                                                    <StackPane.margin>
+                                                        <Insets left="200.0" top="225.0" />
+                                                    </StackPane.margin>
+                                                </TextField>
+                                                <Label fx:id="lblIme" text="Ime smije da sadrži slova!" textFill="RED" visible="false">
+                                                    <StackPane.margin>
+                                                        <Insets left="200.0" top="102.0" />
+                                                    </StackPane.margin>
+                                                    <font>
+                                                        <Font size="10.0" />
+                                                    </font>
+                                                </Label>
+                                                <Label fx:id="lblPrezime" text="Prezime smije da sadrži slova!" textFill="RED" visible="false">
+                                                    <StackPane.margin>
+                                                        <Insets left="200.0" top="152.0" />
+                                                    </StackPane.margin>
+                                                    <font>
+                                                        <Font size="10.0" />
+                                                    </font>
+                                                </Label>
+                                                <Label fx:id="lblEmail" text="E-mail ne zadovoljava traženi format!" textFill="RED" visible="false">
+                                                    <StackPane.margin>
+                                                        <Insets left="200.0" top="252.0" />
+                                                    </StackPane.margin>
+                                                    <font>
+                                                        <Font size="10.0" />
+                                                    </font>
+                                                </Label>
+                                                <Label fx:id="lblBrojTelefona" text="Neispravan format" textFill="RED" visible="false">
+                                                    <StackPane.margin>
+                                                        <Insets left="335.0" top="302.0" />
+                                                    </StackPane.margin>
+                                                    <font>
+                                                        <Font size="10.0" />
+                                                    </font>
+                                                </Label>
+                                                <ComboBox fx:id="cmbBoxBrojevi" prefWidth="115.0" promptText="Brojevi *">
+                                                    <StackPane.margin>
+                                                        <Insets left="200.0" top="275.0" />
+                                                    </StackPane.margin>
+                                                </ComboBox>
+                                                <TextField fx:id="txtFldBrojTelefona" maxWidth="-Infinity" prefWidth="115.0">
+                                                    <StackPane.margin>
+                                                        <Insets left="335.0" top="275.0" />
+                                                    </StackPane.margin>
+                                                </TextField>
+                                                <ComboBox fx:id="cmbBoxEdukacije" prefWidth="115.0" promptText="Edukacije">
+                                                    <StackPane.margin>
+                                                        <Insets left="200.0" top="325.0" />
+                                                    </StackPane.margin>
+                                                </ComboBox>
+                                                <TextField fx:id="txtFldEdukacije" maxWidth="-Infinity" prefWidth="115.0">
+                                                    <StackPane.margin>
+                                                        <Insets left="335.0" top="325.0" />
+                                                    </StackPane.margin>
+                                                </TextField>
+                                    <ImageView fx:id="imgDodajBroj" fitHeight="17.0" fitWidth="17.0" onMouseClicked="#onImgDodajBrojClicked" pickOnBounds="true" preserveRatio="true">
+                                       <StackPane.margin>
+                                          <Insets left="460.0" top="279.0" />
+                                       </StackPane.margin>
+                                    </ImageView>
+                                                <ImageView fx:id="imgIzmjenaBroja" fitHeight="17.0" fitWidth="17.0" onMouseClicked="#onImgIzmjenaBrojaClicked" pickOnBounds="true" preserveRatio="true">
+                                                    <StackPane.margin>
+                                                        <Insets left="485.0" top="279.0" />
+                                                    </StackPane.margin>
+                                                </ImageView>
+                                                <ImageView fx:id="imgBrisanjeBroja" fitHeight="17.0" fitWidth="17.0" onMouseClicked="#onImgBrisanjeBrojaClicked" pickOnBounds="true" preserveRatio="true">
+                                                    <StackPane.margin>
+                                                        <Insets left="510.0" top="279.0" />
+                                                    </StackPane.margin>
+                                                </ImageView>
+                                    <ImageView fx:id="imgDodajEdukaciju" fitHeight="17.0" fitWidth="17.0" onMouseClicked="#onImgDodajEdukacijuClicked" pickOnBounds="true" preserveRatio="true">
+                                       <StackPane.margin>
+                                          <Insets left="460.0" top="329.0" />
+                                       </StackPane.margin>
+                                    </ImageView>
+                                                <ImageView fx:id="imgIzmjenaEdukacije" fitHeight="17.0" fitWidth="17.0" onMouseClicked="#onImgIzmjenaEdukacijeClicked" pickOnBounds="true" preserveRatio="true">
+                                                    <StackPane.margin>
+                                                        <Insets left="485.0" top="328.0" />
+                                                    </StackPane.margin>
+                                                </ImageView>
+                                                <ImageView fx:id="imgBrisanjeEdukacije" fitHeight="17.0" fitWidth="17.0" onMouseClicked="#onImgBrisanjeEdukacijeClicked" pickOnBounds="true" preserveRatio="true">
+                                                    <StackPane.margin>
+                                                        <Insets left="510.0" top="329.0" />
+                                                    </StackPane.margin>
+                                                </ImageView>
+                                                <Button fx:id="btnPotvrdi1" mnemonicParsing="false" onMouseClicked="#onBtnPotvrdi1Clicked" text="Potvrdi">
+                                                    <StackPane.margin>
+                                                        <Insets left="200.0" top="380.0" />
+                                                    </StackPane.margin>
+                                       <font>
+                                          <Font name="Palatino Linotype" size="12.0" />
+                                       </font>
+                                                </Button>
+                                    <Label fx:id="lblRezPretrage1" text="Nema rezultata pretrage!" textFill="RED" visible="false">
+                                       <font>
+                                          <Font size="10.0" />
+                                       </font>
+                                       <StackPane.margin>
+                                          <Insets left="150.0" top="42.0" />
+                                       </StackPane.margin>
+                                    </Label>
+                                            </children>
+                                            <VBox.margin>
+                                                <Insets top="-5.0" />
+                                            </VBox.margin>
+                                        </StackPane>
+                                    </children>
+                                    <StackPane.margin>
+                                        <Insets bottom="5.0" left="5.0" right="5.0" />
+                                    </StackPane.margin>
+                                </VBox>
+                            </children>
+                        </StackPane>
+                    </content>
+                </Tab>
+                <Tab fx:id="tabCjenovnici" styleClass="tabs" text="Rad sa cjenovnicima">
+                    <content>
+                        <StackPane prefHeight="706.0" prefWidth="553.0" styleClass="tabSadrzaj">
+                            <children>
+                                <VBox prefHeight="480.0" prefWidth="540.0" spacing="10.0" style="-fx-border-color: #267326; -fx-background-color: #ffffff;">
+                                    <children>
+                                        <Label text="Odaberite željenu opciju:">
+                                            <VBox.margin>
+                                                <Insets left="30.0" top="10.0" />
+                                            </VBox.margin>
+                                            <font>
+                                                <Font name="Palatino Linotype" size="12.0" />
+                                            </font>
+                                        </Label>
+                                        <RadioButton fx:id="rdBtnKreiranjeCjenovnika" mnemonicParsing="false" onMouseClicked="#onRdBtnKreiranjeCjenovnikaClicked" text="Kreiranje novog cjenovnika">
+                                            <VBox.margin>
+                                                <Insets left="50.0" top="5.0" />
+                                            </VBox.margin>
+                                            <toggleGroup>
+                                                <ToggleGroup fx:id="tgGrpCjenovnik" />
+                                            </toggleGroup>
+                                            <font>
+                                                <Font name="Palatino Linotype" size="12.0" />
+                                            </font>
+                                        </RadioButton>
+                                        <RadioButton fx:id="rdBtnIzmjenaCjenovnika" mnemonicParsing="false" onMouseClicked="#onRdBtnIzmjenaCjenovnikaClicked" text="Izmjena cjenovnika" toggleGroup="$tgGrpCjenovnik">
+                                            <VBox.margin>
+                                                <Insets left="50.0" />
+                                            </VBox.margin>
+                                            <font>
+                                                <Font name="Palatino Linotype" size="12.0" />
+                                            </font>
+                                        </RadioButton>
+                                        <RadioButton fx:id="rdBtnBrisanjeCjenovnika" mnemonicParsing="false" onMouseClicked="#onRdBtnBrisanjeCjenovnikaClicked" text="Brisanje cjenovnika" toggleGroup="$tgGrpCjenovnik">
+                                            <VBox.margin>
+                                                <Insets left="50.0" />
+                                            </VBox.margin>
+                                            <font>
+                                                <Font name="Palatino Linotype" size="12.0" />
+                                            </font>
+                                        </RadioButton>
+                                        <StackPane fx:id="stkPnTab2" alignment="TOP_LEFT" prefHeight="500.0" prefWidth="800.0">
+                                            <children>
+                                                <Label fx:id="lblPretraga2" text="Pretraga:" visible="false" StackPane.alignment="TOP_LEFT">
+                                                    <StackPane.margin>
+                                                        <Insets left="72.0" top="20.0" />
+                                                    </StackPane.margin>
+                                                    <font>
+                                                        <Font name="Palatino Linotype" size="12.0" />
+                                                    </font>
+                                                </Label>
+                                                <TextField fx:id="txtFldPretraga2" maxWidth="-Infinity" onKeyPressed="#onTxtFldPretraga2Pressed" prefWidth="250.0" visible="false">
+                                                    <StackPane.margin>
+                                                        <Insets left="150.0" top="15.0" />
+                                                    </StackPane.margin>
+                                                </TextField>
+                                    <Label fx:id="lblRezPretrage2" text="Nema rezultata pretrage!" textFill="RED" visible="false">
+                                       <font>
+                                          <Font size="10.0" />
+                                       </font>
+                                       <StackPane.margin>
+                                          <Insets left="150.0" top="42.0" />
+                                       </StackPane.margin>
+                                    </Label>
+                                                <Label text="Naziv:">
+                                                    <font>
+                                                        <Font name="Palatino Linotype" size="12.0" />
+                                                    </font>
+                                                    <StackPane.margin>
+                                                        <Insets left="100.0" top="80.0" />
+                                                    </StackPane.margin>
+                                                </Label>
+                                                <Label text="Cijena po satu:" StackPane.alignment="TOP_LEFT">
+                                                    <StackPane.margin>
+                                                        <Insets left="100.0" top="130.0" />
+                                                    </StackPane.margin>
+                                                    <font>
+                                                        <Font name="Palatino Linotype" size="12.0" />
+                                                    </font>
+                                                </Label>
+                                                <Label text="Cijena po danu:" StackPane.alignment="TOP_LEFT">
+                                                    <StackPane.margin>
+                                                        <Insets left="100.0" top="180.0" />
+                                                    </StackPane.margin>
+                                                    <font>
+                                                        <Font name="Palatino Linotype" size="12.0" />
+                                                    </font>
+                                                </Label>
+                                                <TextField fx:id="txtFldCjenovnik" maxWidth="-Infinity" prefWidth="250.0">
+                                                    <StackPane.margin>
+                                                        <Insets left="200.0" top="75.0" />
+                                                    </StackPane.margin>
+                                                </TextField>
+                                                <TextField fx:id="txtFldCijenaPoSatu" maxWidth="-Infinity" prefWidth="250.0">
+                                                    <StackPane.margin>
+                                                        <Insets left="200.0" top="125.0" />
+                                                    </StackPane.margin>
+                                                </TextField>
+                                                <TextField fx:id="txtFldCijenaPoDanu" maxWidth="-Infinity" prefWidth="250.0">
+                                                    <StackPane.margin>
+                                                        <Insets left="200.0" top="175.0" />
+                                                    </StackPane.margin>
+                                                </TextField>
+                                                <Button fx:id="btnPotvrdi2" mnemonicParsing="false" onMouseClicked="#onBtnPotvrdi2Clicked" text="Potvrdi">
+                                                    <StackPane.margin>
+                                                        <Insets left="200.0" top="230.0" />
+                                                    </StackPane.margin>
+                                       <font>
+                                          <Font name="Palatino Linotype" size="12.0" />
+                                       </font>
+                                                </Button>
+                                    <Label fx:id="lblCijenaSat" text="Unesite broj!" textFill="RED" visible="false">
+                                       <font>
+                                          <Font size="10.0" />
+                                       </font>
+                                       <StackPane.margin>
+                                          <Insets left="200.0" top="152.0" />
+                                       </StackPane.margin>
+                                    </Label>
+                                    <Label fx:id="lblCijenaDan" text="Unesite broj!" textFill="RED" visible="false">
+                                       <font>
+                                          <Font size="10.0" />
+                                       </font>
+                                       <StackPane.margin>
+                                          <Insets left="200.0" top="202.0" />
+                                       </StackPane.margin>
+                                    </Label>
+                                            </children>
+                                            <VBox.margin>
+                                                <Insets top="-5.0" />
+                                            </VBox.margin>
+                                        </StackPane>
+                                    </children>
+                                    <StackPane.margin>
+                                        <Insets bottom="5.0" left="5.0" right="5.0" />
+                                    </StackPane.margin>
+                                </VBox>
+                            </children>
+                        </StackPane>
+                    </content>
+                </Tab>
+                <Tab fx:id="tabRezervacije" styleClass="tabs" text="Rad sa rezervacijama">
+                    <content>
+                        <StackPane prefHeight="706.0" prefWidth="553.0" styleClass="tabSadrzaj">
+                            <children>
+                                <VBox prefHeight="480.0" prefWidth="540.0" spacing="10.0" style="-fx-border-color: #267326; -fx-background-color: #ffffff;">
+                                    <children>
+                                        <Label text="Odaberite željenu opciju:">
+                                            <VBox.margin>
+                                                <Insets left="30.0" top="10.0" />
+                                            </VBox.margin>
+                                            <font>
+                                                <Font name="Palatino Linotype" size="12.0" />
+                                            </font>
+                                        </Label>
+                                        <RadioButton fx:id="rdBtnKreiranjeRezervacije" mnemonicParsing="false" onMouseClicked="#onRdBtnKreiranjeRezervacijeClicked" text="Kreiranje nove rezervacije">
+                                            <VBox.margin>
+                                                <Insets left="50.0" top="5.0" />
+                                            </VBox.margin>
+                                            <toggleGroup>
+                                                <ToggleGroup fx:id="tgGrpRezervacija" />
+                                            </toggleGroup>
+                                            <font>
+                                                <Font name="Palatino Linotype" size="12.0" />
+                                            </font>
+                                        </RadioButton>
+                                        <RadioButton fx:id="rdBtnIzmjenaRezervacije" mnemonicParsing="false" onMouseClicked="#onRdBtnIzmjenaRezervacijeClicked" text="Izmjena rezervacije" toggleGroup="$tgGrpRezervacija">
+                                            <VBox.margin>
+                                                <Insets left="50.0" />
+                                            </VBox.margin>
+                                            <font>
+                                                <Font name="Palatino Linotype" size="12.0" />
+                                            </font>
+                                        </RadioButton>
+                                        <RadioButton fx:id="rdBtnBrisanjeRezervacije" mnemonicParsing="false" onMouseClicked="#onRdBtnBrisanjeRezervacijeClicked" text="Brisanje rezervacije" toggleGroup="$tgGrpRezervacija">
+                                            <VBox.margin>
+                                                <Insets left="50.0" />
+                                            </VBox.margin>
+                                            <font>
+                                                <Font name="Palatino Linotype" size="12.0" />
+                                            </font>
+                                        </RadioButton>
+                                        <StackPane fx:id="stkPnTab3" alignment="TOP_LEFT" prefHeight="500.0" prefWidth="800.0">
+                                            <children>
+                                                <Label text="Klijent:">
+                                                    <font>
+                                                        <Font name="Palatino Linotype" size="12.0" />
+                                                    </font>
+                                                    <StackPane.margin>
+                                                        <Insets left="100.0" top="30.0" />
+                                                    </StackPane.margin>
+                                                </Label>
+                                                <Label text="Cjenovnik:" StackPane.alignment="TOP_LEFT">
+                                                    <StackPane.margin>
+                                                        <Insets left="100.0" top="80.0" />
+                                                    </StackPane.margin>
+                                                    <font>
+                                                        <Font name="Palatino Linotype" size="12.0" />
+                                                    </font>
+                                                </Label>
+                                                <TextField fx:id="txtFldBirajKlijenta" maxWidth="-Infinity" onKeyPressed="#onTxtFldBirajKlijentaPressed" prefWidth="250.0">
+                                                    <StackPane.margin>
+                                                        <Insets left="200.0" top="25.0" />
+                                                    </StackPane.margin>
+                                                </TextField>
+                                    <Label fx:id="lblRezultati1" text="Nema rezultata!" textFill="RED" visible="false">
+                                       <font>
+                                          <Font size="10.0" />
+                                       </font>
+                                       <StackPane.margin>
+                                          <Insets left="200.0" top="52.0" />
+                                       </StackPane.margin>
+                                    </Label>
+                                                <TextField fx:id="txtFldBirajCjenovnik" maxWidth="-Infinity" onKeyPressed="#onTxtFldBirajCjenovnikPressed" prefWidth="250.0">
+                                                    <StackPane.margin>
+                                                        <Insets left="200.0" top="75.0" />
+                                                    </StackPane.margin>
+                                                </TextField>
+                                    <Label fx:id="lblRezultati2" text="Nema rezultata!" textFill="RED" visible="false">
+                                       <font>
+                                          <Font size="10.0" />
+                                       </font>
+                                       <StackPane.margin>
+                                          <Insets left="200.0" top="102.0" />
+                                       </StackPane.margin>
+                                    </Label>
+                                                <Label text="Termini:">
+                                                    <font>
+                                                        <Font name="Palatino Linotype" size="12.0" />
+                                                    </font>
+                                                    <StackPane.margin>
+                                                        <Insets left="100.0" top="130.0" />
+                                                    </StackPane.margin>
+                                                </Label>
+                                                <ComboBox fx:id="cmbBoxTermini" prefWidth="250.0" promptText="Lista termina">
+                                                    <StackPane.margin>
+                                                        <Insets left="200.0" top="125.0" />
+                                                    </StackPane.margin>
+                                                </ComboBox>
+                                                <ImageView fx:id="imgIzmjenaTermina" fitHeight="20.0" fitWidth="20.0" onMouseClicked="#onImgIzmjenaTerminaClicked" pickOnBounds="true" preserveRatio="true">
+                                                    <StackPane.margin>
+                                                        <Insets left="460.0" top="128.0" />
+                                                    </StackPane.margin>
+                                                </ImageView>
+                                                <ImageView fx:id="imgBrisanjeTermina" fitHeight="20.0" fitWidth="20.0" onMouseClicked="#onImgBrisanjeTerminaClicked" pickOnBounds="true" preserveRatio="true">
+                                                    <StackPane.margin>
+                                                        <Insets left="485.0" top="128.0" />
+                                                    </StackPane.margin>
+                                                </ImageView>
+                                                <Button fx:id="btnPotvrdi3" mnemonicParsing="false" onMouseClicked="#onBtnPotvrdi3Clicked" text="Potvrdi">
+                                                    <StackPane.margin>
+                                                        <Insets left="200.0" top="420.0" />
+                                                    </StackPane.margin>
+                                       <font>
+                                          <Font name="Palatino Linotype" size="12.0" />
+                                       </font>
+                                                </Button>
+                                    <StackPane fx:id="sckPnTermini" alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="247.0" prefWidth="370.0">
+                                       <StackPane.margin>
+                                          <Insets left="190.0" top="165.0" />
+                                       </StackPane.margin>
+                                       <children>
+                                          <RadioButton fx:id="rdBtnPojedinacniDani" mnemonicParsing="false" onMouseClicked="#onRdBtnPojedinackiDaniClicked" selected="true" text="Pojedinačni dani">
+                                             <StackPane.margin>
+                                                <Insets left="10.0" top="10.0" />
+                                             </StackPane.margin>
+                                             <toggleGroup>
+                                                <ToggleGroup fx:id="tgGrpTermin" />
+                                             </toggleGroup>
+                                             <font>
+                                                <Font name="Palatino Linotype" size="12.0" />
+                                             </font>
+                                          </RadioButton>
+                                          <RadioButton fx:id="rdBtnUzastopniDani" mnemonicParsing="false" onMouseClicked="#onRdBtnUzastopniDaniClicked" text="Uzastopni dani" toggleGroup="$tgGrpTermin">
+                                             <StackPane.margin>
+                                                <Insets left="160.0" top="10.0" />
+                                             </StackPane.margin>
+                                             <font>
+                                                <Font name="Palatino Linotype" size="12.0" />
+                                             </font>
+                                          </RadioButton>
+                                                      <Label text="Datum">
+                                                          <font>
+                                                              <Font name="Palatino Linotype" size="12.0" />
+                                                          </font>
+                                                          <StackPane.margin>
+                                                              <Insets left="10.0" top="45.0" />
+                                                          </StackPane.margin>
+                                                      </Label>
+                                                      <DatePicker fx:id="dtPckPocetak" prefWidth="105.0">
+                                                          <StackPane.margin>
+                                                              <Insets left="70.0" top="40.0" />
+                                                          </StackPane.margin>
+                                                      </DatePicker>
+                                                      <DatePicker fx:id="dtPckKraj" disable="true" prefWidth="105.0">
+                                                          <StackPane.margin>
+                                                              <Insets left="190.0" top="40.0" />
+                                                          </StackPane.margin>
+                                                      </DatePicker>
+                                          <ImageView fx:id="imgDodajTermin" fitHeight="17.0" fitWidth="17.0" onMouseClicked="#onImgDodajTerminClicked" pickOnBounds="true" preserveRatio="true">
+                                             <StackPane.margin>
+                                                <Insets left="310.0" top="45.0" />
+                                             </StackPane.margin>
+                                          </ImageView>
+                                                      <Label text="Vrijeme">
+                                                          <StackPane.margin>
+                                                              <Insets left="10.0" top="85.0" />
+                                                          </StackPane.margin>
+                                             <font>
+                                                <Font name="Palatino Linotype" size="12.0" />
+                                             </font>
+                                                      </Label>
+                                          <CheckBox fx:id="chckBoxSatnica" mnemonicParsing="false" text="Ista satnica i sala za svaki termin">
+                                             <StackPane.margin>
+                                                <Insets left="70.0" top="85.0" />
+                                             </StackPane.margin>
+                                             <font>
+                                                <Font name="Palatino Linotype" size="12.0" />
+                                             </font>
+                                          </CheckBox>
+                                          <Label text="Od:">
+                                             <StackPane.margin>
+                                                <Insets left="32.0" top="125.0" />
+                                             </StackPane.margin>
+                                             <font>
+                                                <Font name="Palatino Linotype" size="12.0" />
+                                             </font>
+                                          </Label>
+                                                      <TextField fx:id="txtFldPocetakSati" alignment="CENTER" maxWidth="-Infinity" prefWidth="35.0" promptText="hh">
+                                                          <StackPane.margin>
+                                                              <Insets left="70.0" top="120.0" />
+                                                          </StackPane.margin>
+                                                      </TextField>
+                                                      <TextField fx:id="txtFldPocetakMinute" alignment="CENTER" maxWidth="-Infinity" prefWidth="35.0" promptText="mm">
+                                                          <StackPane.margin>
+                                                              <Insets left="110.0" top="120.0" />
+                                                          </StackPane.margin>
+                                                      </TextField>
+                                          <Label text="Do:">
+                                             <StackPane.margin>
+                                                <Insets left="182.0" top="125.0" />
+                                             </StackPane.margin>
+                                             <font>
+                                                <Font name="Palatino Linotype" size="12.0" />
+                                             </font>
+                                          </Label>
+                                                      <TextField fx:id="txtFldKrajSati" alignment="CENTER" maxWidth="-Infinity" prefWidth="35.0" promptText="hh">
+                                                          <StackPane.margin>
+                                                              <Insets left="220.0" top="120.0" />
+                                                          </StackPane.margin>
+                                                      </TextField>
+                                                      <TextField fx:id="txtFldKrajMinute" alignment="CENTER" maxWidth="-Infinity" prefWidth="35.0" promptText="mm">
+                                                          <StackPane.margin>
+                                                              <Insets left="260.0" top="120.0" />
+                                                          </StackPane.margin>
+                                                      </TextField>
+                                                      <Label text="Sala:">
+                                                          <font>
+                                                              <Font name="Palatino Linotype" size="12.0" />
+                                                          </font>
+                                                          <StackPane.margin>
+                                                              <Insets left="25.0" top="165.0" />
+                                                          </StackPane.margin>
+                                                      </Label>
+                                                      <TextField fx:id="txtFldSala" maxWidth="-Infinity" prefHeight="26.0" prefWidth="150.0">
+                                                          <StackPane.margin>
+                                                              <Insets left="70.0" top="160.0" />
+                                                          </StackPane.margin>
+                                                      </TextField>
+                                          <ImageView fx:id="imgDodajSalu" fitHeight="17.0" fitWidth="17.0" onMouseClicked="#onImgDodajSaluClicked" pickOnBounds="true" preserveRatio="true">
+                                             <StackPane.margin>
+                                                <Insets left="235.0" top="165.0" />
+                                             </StackPane.margin>
+                                          </ImageView>
+                                                      <ImageView fx:id="imgBrisanjeSale" fitHeight="17.0" fitWidth="17.0" onMouseClicked="#onImgBrisanjeSaleClicked" pickOnBounds="true" preserveRatio="true">
+                                                          <StackPane.margin>
+                                                              <Insets left="265.0" top="165.0" />
+                                                          </StackPane.margin>
+                                                      </ImageView>
+                                                      <Button fx:id="btnPotvrdiTermin" mnemonicParsing="false" onMouseClicked="#onBtnPotvrdiTerminClicked" text="Potvrdi termin">
+                                                          <StackPane.margin>
+                                                              <Insets left="70.0" top="200.0" />
+                                                          </StackPane.margin>
+                                             <font>
+                                                <Font name="Palatino Linotype" size="12.0" />
+                                             </font>
+                                                      </Button>
+                                          <Label fx:id="lblPoljaTermina" text="Nisu popunjena sva polja ispravno!" textFill="RED" visible="false">
+                                             <font>
+                                                <Font size="10.0" />
+                                             </font>
+                                             <StackPane.margin>
+                                                <Insets left="70.0" top="227.0" />
+                                             </StackPane.margin>
+                                          </Label>
+                                       </children>
+                                    </StackPane>
+                                    <Label fx:id="lblTermini" text="Termini nemaju sve potrebne informacije!" textFill="RED" visible="false">
+                                       <font>
+                                          <Font size="10.0" />
+                                       </font>
+                                       <StackPane.margin>
+                                          <Insets left="200.0" top="155.0" />
+                                       </StackPane.margin>
+                                    </Label>
+                                            </children>
+                                            <VBox.margin>
+                                                <Insets top="-5.0" />
+                                            </VBox.margin>
+                                        </StackPane>
+                                    </children>
+                                    <StackPane.margin>
+                                        <Insets bottom="5.0" left="5.0" right="5.0" />
+                                    </StackPane.margin>
+                                </VBox>
+                            </children>
+                        </StackPane>
+                    </content>
+                </Tab>
+            </tabs>
+            <BorderPane.margin>
+                <Insets bottom="10.0" left="20.0" right="30.0" />
+            </BorderPane.margin>
+        </TabPane>
+    </center>
+
+
+</BorderPane>

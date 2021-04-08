@@ -1,0 +1,12 @@
+package ps.projekat.podaci.model;
+
+public enum TipAkcije {
+    KREIRAJ_NOVI_OBJEKAT,
+    PRONADJI_OBJEKAT_ID,
+    PRONADJI_OBJEKAT_NAZIV,
+    PRONADJI_OBJEKAT_DATUM,
+    IZMIJENI_OBJEKAT,
+    OBRISI_OBJEKAT,
+    PROVJERI_OBJEKAT,
+    DOHVATI_SVE_OBJEKTE;
+}

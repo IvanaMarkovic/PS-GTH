@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<StackPane fx:id="stkPanePrijava" alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ps.projekat.prikaziKontroleri.PrijavaKontroler">
+   <children>
+      <Label fx:id="lblKorisnickoIme" text="Korisničko ime">
+         <StackPane.margin>
+            <Insets left="300.0" top="150.0" />
+         </StackPane.margin>
+         <font>
+            <Font name="Palatino Linotype" size="18.0" />
+         </font>
+      </Label>
+      <Label text="Lozinka">
+         <StackPane.margin>
+            <Insets left="300.0" top="250.0" />
+         </StackPane.margin>
+         <font>
+            <Font name="Palatino Linotype" size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtFldKorIme" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="250.0" promptText="*">
+         <StackPane.margin>
+            <Insets left="300.0" top="190.0" />
+         </StackPane.margin>
+      </TextField>
+      <Label fx:id="lblUnosKorImena" text="Korisničko ime ne postoji!" textFill="RED" visible="false">
+         <StackPane.margin>
+            <Insets left="300.0" top="220.0" />
+         </StackPane.margin>
+         <font>
+            <Font size="10.0" />
+         </font>
+      </Label>
+       <PasswordField fx:id="passFldLozinka" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="250.0" promptText="*">
+         <StackPane.margin>
+            <Insets left="300.0" top="290.0" />
+         </StackPane.margin>
+       </PasswordField>
+       <ImageView fx:id="imgPrikaziLozinku" fitHeight="14.0" fitWidth="17.0" onMouseClicked="#onImgPrikaziLozinkuClicked" pickOnBounds="true" preserveRatio="true" visible="true">
+           <StackPane.margin>
+               <Insets left="528.0" top="298.0" />
+           </StackPane.margin>
+       </ImageView>
+      <TextField fx:id="txtFldLozinka" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="250.0" visible="false">
+         <StackPane.margin>
+            <Insets left="300.0" top="290.0" />
+         </StackPane.margin>
+      </TextField>
+       <ImageView fx:id="imgSakrijLozinku" fitHeight="14.0" fitWidth="17.0" onMouseClicked="#onImgSakrijLozinkuClicked" pickOnBounds="true" preserveRatio="true" visible="false">
+           <StackPane.margin>
+               <Insets left="528.0" top="298.0" />
+           </StackPane.margin>
+       </ImageView>
+      <Label fx:id="lblUnosLozinke" text="Lozinka nije ispravna!" textFill="RED" visible="false">
+         <font>
+            <Font size="10.0" />
+         </font>
+         <StackPane.margin>
+            <Insets left="300.0" top="320.0" />
+         </StackPane.margin>
+      </Label>
+       <Button fx:id="btnPrijava" mnemonicParsing="false" onMouseClicked="#onBtnPrijavaClicked" text="Prijava">
+           <StackPane.margin>
+               <Insets left="300.0" top="350.0" />
+           </StackPane.margin>
+           <font>
+               <Font name="Palatino Linotype" size="15.0" />
+           </font>
+       </Button>
+      <Separator maxWidth="-Infinity" minWidth="-Infinity" opacity="0.5" prefWidth="350.0" style="-fx-background-color: #267326;">
+         <StackPane.margin>
+            <Insets left="260.0" top="410.0" />
+         </StackPane.margin>
+      </Separator>
+      <Label text="Nemate nalog?">
+         <StackPane.margin>
+            <Insets left="300.0" top="440.0" />
+         </StackPane.margin>
+          <font>
+              <Font name="Palatino Linotype" size="12.0" />
+          </font>
+      </Label>
+      <Hyperlink fx:id="hypLnkRegistracija" onMouseClicked="#onHypLnkRegistracijaClicked" prefHeight="23.0" prefWidth="84.0" text="Registrujte se" textFill="#267326">
+         <StackPane.margin>
+            <Insets left="385.0" top="438.0" />
+         </StackPane.margin>
+          <font>
+              <Font name="Palatino Linotype" size="12.0" />
+          </font>
+      </Hyperlink>
+   </children>
+</StackPane>

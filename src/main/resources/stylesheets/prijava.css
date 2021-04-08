@@ -1,0 +1,30 @@
+.root {
+   -fx-focus-color: #267326;
+   -fx-background-image: url('./../slike/leaves.png');
+   -fx-background-repeat: stretch;
+   -fx-background-size: stretch;
+   -fx-background-position: center center;
+}
+
+.defaultPozadina {
+    -fx-focus-color: #267326;
+    -fx-background-image: url('./../slike/leaves2.png');
+    -fx-background-repeat: stretch;
+    -fx-background-size: stretch;
+    -fx-background-position: center center;
+ }
+
+.defaultPozadina > .tab-pane {
+    -fx-focus-color: #267326;
+    -fx-border-color: #267326;
+    -fx-color: white;
+}
+
+.defaultPozadina > .tab-pane > .tabs {
+    -fx-background-color: #6bbf6d;
+    -fx-color: white;
+}
+
+ .defaultPozadina > .tab-pane .tab-header-area .tab-header-background {
+    -fx-background-color: white;
+ }

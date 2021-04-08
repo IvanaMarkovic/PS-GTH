@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="brdPnIzvjestaji" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="850.0" styleClass="defaultPozadina" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ps.projekat.prikaziKontroleri.IzvjestajiKontroler">
+    <left>
+        <VBox prefHeight="752.0" prefWidth="337.0" BorderPane.alignment="CENTER">
+            <children>
+                <RadioButton fx:id="rdBtnKlijenti" mnemonicParsing="false" onMouseDragged="#onRdBtnKlijentiClicked" selected="true" text="Klijenti">
+                    <VBox.margin>
+                        <Insets left="40.0" top="20.0" />
+                    </VBox.margin>
+                    <font>
+                        <Font name="Palatino Linotype" size="13.0" />
+                    </font>
+               <toggleGroup>
+                  <ToggleGroup fx:id="tgGrpPretazivanje" />
+               </toggleGroup>
+                </RadioButton>
+                <RadioButton fx:id="rdBtnCjenovnici" mnemonicParsing="false" onMouseClicked="#onRdBtnCjenovniciClicked" text="Cjenovnici" toggleGroup="$tgGrpPretazivanje">
+                    <font>
+                        <Font name="Palatino Linotype" size="13.0" />
+                    </font>
+                    <VBox.margin>
+                        <Insets left="40.0" top="20.0" />
+                    </VBox.margin>
+                </RadioButton>
+                <RadioButton fx:id="rdBtnRezervacije" mnemonicParsing="false" onMouseClicked="#onRdBtnRezervacijeClicked" text="Rezervacije" toggleGroup="$tgGrpPretazivanje">
+                    <VBox.margin>
+                        <Insets left="40.0" top="20.0" />
+                    </VBox.margin>
+                    <font>
+                        <Font name="Palatino Linotype" size="13.0" />
+                    </font>
+                </RadioButton>
+                <Separator prefWidth="200.0" style="-fx-background-color: #267326;">
+                    <VBox.margin>
+                        <Insets left="20.0" right="20.0" top="10.0" />
+                    </VBox.margin>
+                </Separator>
+                <HBox>
+                    <children>
+                        <Label text="Klijent:">
+                            <HBox.margin>
+                                <Insets left="40.0" top="10.0" />
+                            </HBox.margin>
+                            <font>
+                                <Font name="Palatino Linotype" size="13.0" />
+                            </font>
+                        </Label>
+                        <TextField fx:id="txtFldKlijent" onKeyPressed="#onTxtFldKlijentPressed" prefWidth="180.0" promptText="Ime i prezime">
+                            <HBox.margin>
+                                <Insets left="25.0" top="7.0" />
+                            </HBox.margin>
+                        </TextField>
+                    </children>
+                    <VBox.margin>
+                        <Insets top="10.0" />
+                    </VBox.margin>
+                </HBox>
+            <Label fx:id="lblRezultati1" text="Nema rezultata!" textFill="RED" visible="false">
+               <font>
+                  <Font size="10.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="108.0" />
+               </VBox.margin>
+            </Label>
+                <HBox>
+                    <children>
+                        <Label text="Sala:">
+                            <HBox.margin>
+                                <Insets left="40.0" top="20.0" />
+                            </HBox.margin>
+                            <font>
+                                <Font name="Palatino Linotype" size="13.0" />
+                            </font>
+                        </Label>
+                        <TextField fx:id="txtFldNazivSale" onKeyPressed="#onTxtNazivSalePressed" prefWidth="180.0" promptText="Naziv sale">
+                            <HBox.margin>
+                                <Insets left="38.0" top="16.0" />
+                            </HBox.margin>
+                        </TextField>
+                    </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+                </HBox>
+            <Label fx:id="lblRezultati2" text="Nema rezultata!" textFill="RED" visible="false">
+               <font>
+                  <Font size="10.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="108.0" />
+               </VBox.margin>
+            </Label>
+            <HBox>
+               <children>
+                  <Label text="Cjenovnik:">
+                     <HBox.margin>
+                        <Insets left="40.0" top="20.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Palatino Linotype" size="12.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtFldCjenovnik" onKeyPressed="#ontxtFldCjenovnikPressed" prefWidth="180.0" promptText="Naziv cjenovnika">
+                     <HBox.margin>
+                        <Insets left="10.0" top="15.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </HBox>
+            <Label fx:id="lblRezultati3" text="Nema rezultata!" textFill="RED" visible="false">
+               <font>
+                  <Font size="10.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="108.0" />
+               </VBox.margin>
+            </Label>
+                <Label text="Period iznajmljivanja:">
+                    <VBox.margin>
+                        <Insets left="40.0" top="20.0" />
+                    </VBox.margin>
+                    <font>
+                        <Font name="Palatino Linotype" size="13.0" />
+                    </font>
+                </Label>
+                <HBox>
+                    <children>
+                        <Label text="Početni datum:">
+                            <HBox.margin>
+                                <Insets left="50.0" top="10.0" />
+                            </HBox.margin>
+                            <font>
+                                <Font name="Palatino Linotype" size="13.0" />
+                            </font>
+                        </Label>
+                        <DatePicker fx:id="dtPckPocetak">
+                            <HBox.margin>
+                                <Insets left="15.0" top="8.0" />
+                            </HBox.margin>
+                        </DatePicker>
+                    </children>
+                    <VBox.margin>
+                        <Insets top="10.0" />
+                    </VBox.margin>
+                </HBox>
+                <HBox prefHeight="57.0" prefWidth="338.0">
+                    <children>
+                        <Label text="Krajnji datum:">
+                            <HBox.margin>
+                                <Insets left="50.0" top="20.0" />
+                            </HBox.margin>
+                            <font>
+                                <Font name="Palatino Linotype" size="13.0" />
+                            </font>
+                        </Label>
+                        <DatePicker fx:id="dtPckKraj">
+                            <HBox.margin>
+                                <Insets left="19.0" top="15.0" />
+                            </HBox.margin>
+                        </DatePicker>
+                    </children>
+                </HBox>
+            <Label fx:id="lblDatumi" text="Morate unijeti oba datuma!" textFill="RED" visible="false">
+               <font>
+                  <Font size="10.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="50.0" />
+               </VBox.margin>
+            </Label>
+                <Button fx:id="btnPotvrdi" mnemonicParsing="false" onMouseClicked="#onBtnPotvrdiClicked" text="Potvrdi">
+                    <font>
+                        <Font name="Palatino Linotype" size="13.0" />
+                    </font>
+                    <VBox.margin>
+                        <Insets left="40.0" top="15.0" />
+                    </VBox.margin>
+                </Button>
+            <Button fx:id="btnIzmijeni" mnemonicParsing="false" onMouseClicked="#onBtnIzmijeniClicked" text="Izmijeni">
+               <VBox.margin>
+                  <Insets left="40.0" top="15.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="Palatino Linotype" size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnObrisi" mnemonicParsing="false" onMouseClicked="#onBtnObrisiClicked" text="Obriši">
+               <font>
+                  <Font name="Palatino Linotype" size="12.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="40.0" top="15.0" />
+               </VBox.margin>
+            </Button>
+            <Label fx:id="lblOdabranRed" text="Morate odabrati red u tabeli!" textFill="RED" visible="false">
+               <font>
+                  <Font size="10.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="40.0" top="5.0" />
+               </VBox.margin>
+            </Label>
+            </children>
+        </VBox>
+    </left>
+    <top>
+        <ImageView fx:id="imgNazadNaPocetnu" fitHeight="44.0" fitWidth="49.0" onMouseClicked="#onImgNazadNaPocetnuClicked" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="TOP_LEFT">
+            <BorderPane.margin>
+                <Insets left="60.0" top="45.0" />
+            </BorderPane.margin>
+        </ImageView>
+    </top>
+    <center>
+        <TableView fx:id="tblTabela" BorderPane.alignment="CENTER">
+            <BorderPane.margin>
+                <Insets bottom="20.0" left="20.0" right="20.0" />
+            </BorderPane.margin>
+        </TableView>
+    </center>
+</BorderPane>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-09-09T15:05:32.503436800Z</date>
+  <millis>1568041532503</millis>
+  <nanos>436800</nanos>
+  <sequence>0</sequence>
+  <logger>ps.projekat.Main</logger>
+  <level>WARNING</level>
+  <class>ps.projekat.util.LoggerUtil</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>greska1</message>
+</record>
+<record>
+  <date>2019-09-09T15:05:32.527988500Z</date>
+  <millis>1568041532527</millis>
+  <nanos>988500</nanos>
+  <sequence>1</sequence>
+  <logger>ps.projekat.Main</logger>
+  <level>WARNING</level>
+  <class>ps.projekat.util.LoggerUtil</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>greska2</message>
+</record>
+</log>
